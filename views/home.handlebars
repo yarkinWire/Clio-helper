@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>External Signing</title>
+</head>
+<body>
+  <h1>Example App: Home</h1>
+  <h1>External Signing</h1>
+
+  <p>{{something}}</p>
+
+  <h2>Raw Transaction Data</h2>
+  <pre id="rawTxData">{{trx_data}}</pre>
+
+  <h2>Action Details</h2>
+  <p><strong>Contract:</strong> <span id="contract">{{contract}}</span></p>
+  <p><strong>Action:</strong> <span id="actionName">{{actionName}}</span></p>
+  <p><strong>Permissions:</strong> <span id="permissions">{{permissions}}</span></p>
+  <h2>Action Data</h2>
+  <pre id="actionData">{{actionData}}</pre>
+
+
+  <button onclick="connectWallet()">Connect Wallet</button>
+  <button onclick="prepareAndSign()">Prepare & Sign & Push</button>
+
+
+  <h2>Account: <span class="showAccount"></span></h2>
+  <h2>Chain ID: <span class="showChainId"></span></h2>
+
+
+  <script src="/js/my_code.js"></script>
+</body>
+</html>
