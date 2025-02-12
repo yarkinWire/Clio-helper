@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "clio-helper2": "./src/index.js"
+    "clio-helper": "./src/index.js"
   },
   "main": "index.ts",
   "scripts": {

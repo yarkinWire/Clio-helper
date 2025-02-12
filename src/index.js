@@ -18,7 +18,7 @@ const eosjs_jssig_1 = require("eosjs/dist/eosjs-jssig");
 const server_1 = __importDefault(require("./server"));
 const commander_1 = require("commander");
 // const DEFAULT_ENDPOINT = 'http://127.0.0.1:3000';
-// This is for only get info !or get block
+// This is for only get info or get block
 const DEFAULT_ENDPOINT = 'https://testnet-lb.wire.foundation';
 const fetch = globalThis.fetch;
 function createRpc(url = DEFAULT_ENDPOINT) {
