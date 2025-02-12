@@ -4,6 +4,7 @@ import { Api, JsonRpc } from 'eosjs';
 import { JsSignatureProvider } from 'eosjs/dist/eosjs-jssig';
 import CLIOServer from './server';
 import { program } from 'commander';
+import open from "open";
 
 
 // const DEFAULT_ENDPOINT = 'http://127.0.0.1:3000';

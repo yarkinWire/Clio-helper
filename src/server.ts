@@ -3,8 +3,10 @@ import { engine } from 'express-handlebars';
 import { Server } from 'http';
 import { Subject } from 'rxjs';
 import { exec } from 'child_process';
-import { Transaction, SignedTransaction, Action, ABI, NameType , AnyAction, APIClient, FetchProvider } from '../lib/core';
+import { Transaction, SignedTransaction, Action, ABI, NameType , AnyAction, APIClient, FetchProvider } from '@wireio/core';
 import { evmSigToWIRE } from '@wireio/wns';
+import os from "os";
+
 
 
 export interface SubjectResponse {
@@ -209,15 +211,20 @@ export class CLIOHTMLServer {
             res.json(this.transactionData);
         });
 
+        const PORT = 3000;
         this.server = this.app.listen(3000, () => {
             this.isListening = true;
-            console.log('LISTENING ON PORT :', 3000);
+            console.log(`LISTENING ON PORT: ${PORT}`);
 
-            exec(`xdg-open http://127.0.0.1:3000`, (err) => {
-                if (err) {
-                  console.error('Failed to open in browser:', err);
-                }
-            });
+            const url = `http://127.0.0.1:${PORT}`;
+
+            if (os.platform() === "darwin") {
+                exec(`open ${url}`);
+            } else if (os.platform() === "win32") {
+                exec(`start ${url}`);
+            } else  {
+                exec(`xdg-open ${url}`);
+            }
         });
 
 
