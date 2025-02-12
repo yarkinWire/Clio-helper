@@ -51,6 +51,16 @@ npm link
 
 This command creates a global symlink, allowing you to run clio-helper from anywhere in your terminal.
 
+> **ℹ️ Note:**  
+> By default, the RPC endpoint is set to a local node running on **port 8888**.  
+> To connect to a different RPC, update the URL in `server.ts`:  
+>
+> ```ts
+> const wire = new APIClient({ provider: new FetchProvider('http://127.0.0.1:8888') });
+> ```  
+>
+> Replace `'http://127.0.0.1:8888'` with the desired RPC URL as needed.
+>
 #### Example
 
 ```sh
